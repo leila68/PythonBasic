@@ -16,7 +16,9 @@ for i1, ac1 in enumerate(actors_list):
         for j1, ac2 in enumerate(actors_list[i1+1:], i1+1):
             for j2 in ac2:
                 if i2 == j2:
-                    pair_index_list.append((i1, j1))
+                    pair_index_list.append((df_imdb.loc[i1]['title'], df_imdb.loc[j1]['title']))
+                    # pair_index_list.append((i1, j1))
+
 print(pair_index_list)
 
 g = nx.Graph()
