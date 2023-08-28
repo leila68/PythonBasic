@@ -12,7 +12,7 @@ df_rating_list = pd.DataFrame({
 for idx,rate in enumerate(df_imdb['star_rating']):
     if(rate < 5):
         df_rating_list.at[0,'Number of Movies'] += 1
-    if (rate >5 and rate<=7):
+    if (rate>5 and rate<=7):
         df_rating_list.at[1,'Number of Movies'] += 1
     if (rate> 7) and (rate <= 8):
         df_rating_list.at[2,'Number of Movies'] += 1
@@ -20,9 +20,8 @@ for idx,rate in enumerate(df_imdb['star_rating']):
         df_rating_list.at[3,'Number of Movies'] += 1
     if (rate> 9):
         df_rating_list.at[4,'Number of Movies'] += 1
-
 print(df_rating_list)
-
+#draw chart
 df_rating_list.plot(x="Rating Range", y='Number of Movies', kind='bar')
 plt.xlabel("Rating Range")
 plt.ylabel("Number of Movies")
